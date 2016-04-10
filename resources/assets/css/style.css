@@ -1,0 +1,20 @@
+body
+{
+    font-family: 'Maven Pro', sans-serif;
+
+}
+
+#selectDestinationAreaList
+{
+    margin-top: -30px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
