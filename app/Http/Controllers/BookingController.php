@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\View;
 use App\Truck;
+use Session;
 
 /////////////////////////////////////////////////////////
 //    Booking Controller
@@ -46,5 +47,17 @@ class BookingController extends Controller
         $sourceID = Input::get('source');
         $destID = Input::get('destination');
         return View::make('packers-movers');
+    }
+
+    public function selectTruck()
+    {
+        $truckID = Input::get('truckID');
+        $truck_details = Truck::find($truckID)->toArray();
+        $cost = "3000";
+        $data = [
+                  'truck_details' => $truck_details,
+                  'cost' => $cost,
+                ];
+        return $data;
     }
 }

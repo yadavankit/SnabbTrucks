@@ -24,7 +24,9 @@
           <div class="card">
             <div class="card-content dark-text">
               <center><a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#modal1"><i class="material-icons">local_shipping</i></a></center>
-              <center><h5>CHOOSE YOUR TRUCK</h5></center>
+            <div id = "select_truck_div">
+                  <center><h5>CHOOSE YOUR TRUCK</h5></center>
+            </div>
 
             </div>
           </div>
@@ -33,17 +35,20 @@
           <div class="card teal">
             <div class="card-content white-text">
               <span class="card-title">WHAT IS THE COST?</span>
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <div id = "_div">
+                    <center><h5>FIRST, SELECT A TRUCK</h5></center>
+              </div>
+
             </div>
           </div>
         </div>
         <div class="col s4">
           <div class="card teal">
             <div class="card-content white-text">
-              <span class="card-title">MAKE YOUR ORDER</span>
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <span class="card-title">MAKE YOUR ORDER NOW</span>
+              
+              <p> You are just seconds away from completing your order. Hold on cowboy.
+
             </div>
           </div>
         </div>
@@ -65,7 +70,7 @@
               </div>
               <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">{{$truck->truck_name}}<i class="material-icons right">more_vert</i></span>
-                <center><a class="btn" onclick="selectTruck()">SELECT</a></center>
+                <center><a class="btn" onclick="selectTruck({{$truck->id}})">SELECT</a></center>
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">{{$truck->truck_name}}<i class="material-icons right">close</i></span>

@@ -1,19 +1,19 @@
 // Ajax Call to Select Truck and Display Cost
-function selectTruck()
+function selectTruck(truck_id)
 {
   $.ajax({
-      url : "https://maps.googleapis.com/maps/api/geocode/json?place_id=" + placeID + "&key=AIzaSyDTPWN__X_moAy4Nty0TgEJKMkynbw-n6U",
+      url : "selectTruck?truckID="+truck_id,
       type : "GET",
       dataType : "json",
       success : function(result)
       {
-          if(result)
-          {
-              $('#sourceLocationLat').html(result.results[0].geometry.location.lat);
-              $('#sourceLocationLong').html(result.results[0].geometry.location.lng);
-          }
+        var cost_html = "<center><h5>&#8377; " + result.cost + " ONLY </h5></center>";
+          $("#select_truck_div").html("<center><h5>CHANGE TRUCK</h5></center>");
+          $("#cost_div").html(cost_html);
+           $('#modal1').closeModal();
       }
   });
+
 
 }
 
