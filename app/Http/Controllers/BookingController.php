@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\View;
+use App\Truck;
 
 /////////////////////////////////////////////////////////
 //    Booking Controller
@@ -28,10 +29,10 @@ class BookingController extends Controller
     {
         $sourceID = Input::get('source');
         $destID = Input::get('destination');
-
-
+        $trucks = Truck::all();
         return View::make('hire-truck')->with('sourceID', $sourceID)
-                                        ->with('destID', $destID);
+                                        ->with('destID', $destID)
+                                        ->with('trucks', $trucks);
 
     }
 

@@ -1,6 +1,33 @@
+// Ajax Call to Select Truck and Display Cost
+function selectTruck()
+{
+  $.ajax({
+      url : "https://maps.googleapis.com/maps/api/geocode/json?place_id=" + placeID + "&key=AIzaSyDTPWN__X_moAy4Nty0TgEJKMkynbw-n6U",
+      type : "GET",
+      dataType : "json",
+      success : function(result)
+      {
+          if(result)
+          {
+              $('#sourceLocationLat').html(result.results[0].geometry.location.lat);
+              $('#sourceLocationLong').html(result.results[0].geometry.location.lng);
+          }
+      }
+  });
+
+}
+
+
+//Modal Triggers
+$(document).ready(function()
+{
+    $('.modal-trigger').leanModal();
+});
+
 //Before Document Loads
 $(document).before(function()
 {
+  $('.modal-trigger').leanModal();
     $('#sourceID').load();
     $('#destID').load();
     var sourceID = getParameterByName('source');
