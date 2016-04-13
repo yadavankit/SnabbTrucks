@@ -17,13 +17,13 @@
     <script type="text/javascript" src="/SnabbTrucks/resources/assets/js/hireTruck.js"></script>
 
     {{--Google Map Div--}}
-    <div id="googleMap" style="width: 100%; height: 450px;"></div>
+    <div id= "googleMap" style="width: 100%; height: 450px;"></div>
 
     <div class="row" style="margin-top: 20px;">
         <div class="col s4">
           <div class="card">
             <div class="card-content dark-text">
-              <center><a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#modal1"><i class="material-icons">local_shipping</i></a></center>
+              <center><a class="btn-floating btn-large waves-effect waves-light red modal-trigger1" href="#modal1"><i class="material-icons">local_shipping</i></a></center>
             <div id = "select_truck_div">
                   <center><h5>CHOOSE YOUR TRUCK</h5></center>
             </div>
@@ -35,7 +35,7 @@
           <div class="card teal">
             <div class="card-content white-text">
               <span class="card-title">WHAT IS THE COST?</span>
-              <div id = "_div">
+              <div id = "cost_div">
                     <center><h5>FIRST, SELECT A TRUCK</h5></center>
               </div>
 
@@ -45,10 +45,10 @@
         <div class="col s4">
           <div class="card teal">
             <div class="card-content white-text">
-              <span class="card-title">MAKE YOUR ORDER NOW</span>
-              
-              <p> You are just seconds away from completing your order. Hold on cowboy.
-
+              <span class="card-title">MAKE YOUR ORDER</span>
+              <div id= "make_order">
+              <p> You are just seconds away from completing your order. Hold on cowboy.</p><br><center><a id= "submit_order_btn" href="#modal2" class='waves-effect waves-light btn disabled modal-trigger2'>MAKE YOUR ORDER</a></center>
+            </div>
             </div>
           </div>
         </div>
@@ -81,11 +81,17 @@
 
         @endforeach
       </div>
-
-
-
     </div>
-    </div>
+  </div>
+
+  {{--Truck Select Modal--}}
+  <div id= "modal2" class= "modal">
+    <div class="modal-content">
+      <h4>Please fill following details :</h4>
+
+      
+  </div>
+</div>
 
     {{--Just for Backend--}}
     <div style="visibility: hidden; width: 0px; height:0px;">

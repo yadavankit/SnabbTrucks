@@ -1,5 +1,5 @@
 <?php
-// use Session;
+use Illuminate\Http\Request as Request;
 //////////////////////////////////////////////////////////////
 // Route for the Home page
 //////////////////////////////////////////////////////////////
@@ -28,5 +28,6 @@ Route::get('selectTruck', 'BookingController@selectTruck');
 
 Route::get('sessiondata', function()
 {
-	print_r(Session::get('truck_id'));
+	print_r(Redis::get('cost'));
+	print_r(Redis::get('truck_id'));
 });

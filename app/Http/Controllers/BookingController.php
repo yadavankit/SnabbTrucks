@@ -1,15 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\View;
 use App\Truck;
-use Session;
+use Redis;
 
 /////////////////////////////////////////////////////////
 //    Booking Controller
@@ -52,8 +48,10 @@ class BookingController extends Controller
     public function selectTruck()
     {
         $truckID = Input::get('truckID');
+        Redis::set('truck_id', $truckID);
         $truck_details = Truck::find($truckID)->toArray();
         $cost = "3000";
+        Redis::set('cost', $cost);
         $data = [
                   'truck_details' => $truck_details,
                   'cost' => $cost,

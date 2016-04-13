@@ -7,9 +7,10 @@ function selectTruck(truck_id)
       dataType : "json",
       success : function(result)
       {
-        var cost_html = "<center><h5>&#8377; " + result.cost + " ONLY </h5></center>";
-          $("#select_truck_div").html("<center><h5>CHANGE TRUCK</h5></center>");
+        var cost_html = "<center><h5>APPROX. &#8377; " + result.cost + " ONLY </h5></center>";
+          $("#select_truck_div").html("<center><h5>CHANGE YOUR TRUCK</h5></center>");
           $("#cost_div").html(cost_html);
+          $("#submit_order_btn").removeClass("disabled");
            $('#modal1').closeModal();
       }
   });
@@ -21,7 +22,9 @@ function selectTruck(truck_id)
 //Modal Triggers
 $(document).ready(function()
 {
-    $('.modal-trigger').leanModal();
+  $('.modal-trigger2').leanModal();
+  
+    $('.modal-trigger1').leanModal();
 });
 
 //Before Document Loads
